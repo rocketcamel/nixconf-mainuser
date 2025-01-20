@@ -6,11 +6,7 @@
 
   programs = {
     git = import ./git.nix;
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestion.enable = true;
-    };
+    zsh = import ./zsh.nix;
     tmux = import ./tmux.nix { inherit pkgs; };
     helix = import ./helix.nix { inherit pkgs; };
   };
@@ -20,6 +16,7 @@
     nodejs_22
     pnpm
     gh
+    oh-my-posh
   ];
 
   home.stateVersion = "24.11";
