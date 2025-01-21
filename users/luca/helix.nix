@@ -11,7 +11,18 @@
     {
       name = "typescript";
       auto-format = true;
-      formatter.command = "${pkgs.nodePackages_latest.prettier}/bin/prettier";
+      formatter = {
+        command = "${pkgs.nodePackages_latest.prettier}/bin/prettier";
+        args = [ "--parser" "typescript" ];
+      };
+    }
+    {
+      name = "tsx";
+      auto-format = true;
+      formatter = {
+        command = "${pkgs.nodePackages_latest.prettier}/bin/prettier";
+        args = [ "--parser" "typescript" ];
+      };
     }
   ];
   settings = {
